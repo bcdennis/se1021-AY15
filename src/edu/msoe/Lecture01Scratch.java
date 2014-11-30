@@ -9,7 +9,7 @@ import java.util.Scanner;
  * @author Brad
  * 
  */
-public class Lecture01 {
+public class Lecture01Scratch {
 
     /**
      * @param args
@@ -23,7 +23,6 @@ public class Lecture01 {
         //Lecture01.References();
         //Lecture01.PrimitivesVReferences();
         //Lecture01.Functional();
-        Lecture01.RefactoredStep1();
         
     }
     
@@ -128,23 +127,6 @@ public class Lecture01 {
         
         // DRY Princple
    }
-    
-    public static void RefactoredStep1() {
-        Complex1 c1 = new Complex1(2.0, 1.0);
-        // What do you think will print out here?
-        System.out.println(c1);
-        
-    }
    
-    
-    static class Complex1 {
-        private double real;
-        private double imag;
-        
-        public Complex1(double r, double i) {
-            real = r;
-            imag = i;
-        }
-    }
 
 }
