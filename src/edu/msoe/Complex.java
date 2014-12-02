@@ -149,7 +149,7 @@ public class Complex {
    * @return true if the objects share the same value, otherwise false
    */
   public boolean equals(Complex that) {
-    return this.real==that.real && this.imag==that.imag;
+    return that instanceof Complex && this.real== that.real && this.imag==that.imag;
   }
  
   /**
