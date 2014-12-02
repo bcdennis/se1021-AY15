@@ -19,7 +19,7 @@ public class Lecture01Scratch {
         // This series adapted from:
         // http://msoe.us/taylor/tutorial/se1011/
         
-        //Lecture01.Primitives();
+        Lecture01Scratch.Primitives();
         //Lecture01.References();
         //Lecture01.PrimitivesVReferences();
         //Lecture01.Functional();
