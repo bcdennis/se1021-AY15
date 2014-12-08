@@ -36,11 +36,15 @@ public class Person {
         return this.lastName;
     }
 
-    public static Person createPerson(String firstName) {
+    @Override
+    public String toString() {
+        return "I am a Person and my name is " + this.getFirstName() + " " + this.getLastName();
+    }
+
+
+    public static Person create(String firstName) {
 
         Person p = new Person(firstName, "");
-        p.setFirstName(firstName);
-
         return p;
     }
 }

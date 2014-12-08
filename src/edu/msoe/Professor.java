@@ -6,6 +6,7 @@ package edu.msoe;
 public class Professor extends Person{
     private String department;
     private String nickName;
+    private String title = "Dr. ";
 
     public Professor(){
 
@@ -16,7 +17,19 @@ public class Professor extends Person{
     }
 
     public Professor(String firstName, String lastName){
+        //this();
         super(firstName, lastName);
+
+    }
+
+    @Override
+    public String getFirstName() {
+        return this.title + super.getFirstName();
+    }
+
+    @Override
+    public String toString() {
+        return super.toString() + "  I am also a Professor.";
     }
 
 
@@ -39,5 +52,11 @@ public class Professor extends Person{
     public void teachClass() {
         System.out.println(this.getNickName());
         System.out.println("Blah blah... zzzzzz");
+    }
+
+    public static Person create(String firstName) {
+        Person p = new Professor(firstName, "");
+
+        return p;
     }
 }
