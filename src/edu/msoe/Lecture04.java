@@ -26,8 +26,6 @@ public class Lecture04 {
                                                 - Independent lifetime.
             Object 'A' is-a Object 'B'  (Inheritance) A is a derived, specialized form of B.
 
-
-
          */
 
     }
