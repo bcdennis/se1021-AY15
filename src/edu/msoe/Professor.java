@@ -9,7 +9,7 @@ public class Professor extends Person{
     private String title = "Dr. ";
 
     public Professor(){
-
+        //this.title = "Prof. ";
     }
 
     public Professor(String nickName) {

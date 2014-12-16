@@ -20,3 +20,7 @@ bin/
 # JIRA plugin
 atlassian-ide-plugin.xml
 
+src/edu/msoe/Lab1Functional.java
+src/edu/msoe/Lab1OO.java
+src/edu/msoe/TooterApi.java
+src/edu/msoe/TootsContainer.java
