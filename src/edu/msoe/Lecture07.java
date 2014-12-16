@@ -9,8 +9,15 @@ public class Lecture07 {
 
 
 
+        /*
+        Object aObject = new Lecture07().new Animal();
+        aObject.setName("Hobbes");
 
-        //Object aObject = new Lecture07().new Animal();
+        System.out.println(aObject.speak());
+        System.out.println(aObject);
+        */
+
+/*
         Animal anAnimal = new Lecture07().new Cat();
         anAnimal.setName("Tabby");
 
@@ -19,6 +26,27 @@ public class Lecture07 {
 
 
 
+        Cat aCat = new Lecture07().new Cat();
+        aCat.setName("Tabby");
+
+        System.out.println(aCat.speak());
+        System.out.println(aCat);
+        System.out.println(aCat.equals(anAnimal));
+
+  */
+
+        Dog aDog = new Lecture07().new Dog();
+        aDog.setName("Fido");
+
+        System.out.println(aDog.speak());
+        System.out.println(aDog);
+
+        Dog anotherDog = new Lecture07().new Dog();
+        anotherDog.setName("Fido");
+
+        System.out.println(anotherDog.speak());
+        System.out.println(anotherDog);
+        System.out.println(anotherDog.equals(aDog));
 
     }
 
@@ -71,7 +99,8 @@ public class Lecture07 {
         @Override
         public void setName(String name) {
             super.setName(name);
-            this.nickname = name + "ee the Cat";
+            //Why can I do this for nickname but not name?
+            this.nickname = name + "-ee the Cat";
         }
 
         public String speak() {
@@ -86,7 +115,7 @@ public class Lecture07 {
         public String toString() {
             return super.toString()
                     + " That makes me a cat."
-                    + "When I am petted I go '" + this.pet() + "'."
+                    + " When I am petted I go '" + this.pet() + "'."
                     + " My nickname is '" + this.getNickName() + "'.";
         }
 
@@ -111,6 +140,11 @@ public class Lecture07 {
                     + " That makes me a dog."
                     + " When I am petted I go '" + this.pet() + "'."
                     + " My nickname is '" + this.getNickName() + "'.";
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            return super.equals(obj) && (obj instanceof Lecture07.Dog);
         }
     }
 }
