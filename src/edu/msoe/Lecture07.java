@@ -35,6 +35,7 @@ public class Lecture07 {
 
   */
 
+
         Dog aDog = new Lecture07().new Dog();
         aDog.setName("Fido");
 
@@ -55,7 +56,7 @@ public class Lecture07 {
         String pet();
     }
 
-    abstract class Animal {
+    class Animal {
 
         private String name = "";
         protected String nickname = "";
@@ -75,7 +76,7 @@ public class Lecture07 {
             return this.nickname;
         }
 
-        public abstract String speak();
+        public  String speak() {return "";};
 
         @Override
         public boolean equals(Object obj) {
@@ -96,9 +97,11 @@ public class Lecture07 {
         public Cat(){}
 
 
+
         @Override
         public void setName(String name) {
             super.setName(name);
+
             //Why can I do this for nickname but not name?
             this.nickname = name + "-ee the Cat";
         }
