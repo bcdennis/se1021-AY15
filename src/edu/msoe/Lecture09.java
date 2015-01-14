@@ -17,7 +17,7 @@ public class Lecture09 implements ActionListener {
         //JOptionPaneDemo();
 
 
-        JFrameDemo();
+//        JFrameDemo();
         JFrameDemoWithActions();
 
 
@@ -66,7 +66,7 @@ public class Lecture09 implements ActionListener {
 
         // http://docs.oracle.com/javase/tutorial/uiswing/layout/visual.html
         demoFrame.setLayout(new FlowLayout());
-        //demoFrame.setVisible(true);
+//        demoFrame.setVisible(true);
 
         // http://docs.oracle.com/javase/8/docs/api/javax/swing/JLabel.html
         // http://docs.oracle.com/javase/tutorial/uiswing/components/label.html
@@ -79,6 +79,7 @@ public class Lecture09 implements ActionListener {
         JTextField firstNameTextField = new JTextField(25);
         demoFrame.add(firstNameTextField);
 
+
         // http://docs.oracle.com/javase/8/docs/api/javax/swing/JButton.html
         // http://docs.oracle.com/javase/tutorial/uiswing/components/button.html
         JButton saveButton = new JButton("Save");
@@ -90,8 +91,9 @@ public class Lecture09 implements ActionListener {
         cancelButton.setMnemonic(KeyEvent.VK_C);
         demoFrame.add(cancelButton);
 
-        demoFrame.setVisible(true);
         // demoFrame.revalidate();
+
+        demoFrame.setVisible(true);
 
     }
 
