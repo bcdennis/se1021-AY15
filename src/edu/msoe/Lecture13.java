@@ -8,6 +8,8 @@ import java.awt.event.FocusEvent;
 import java.awt.event.FocusListener;
 import java.util.Scanner;
 
+
+
 public class Lecture13 extends JFrame{
     JLabel messageLabel;
     JLabel instructionsLabel;
@@ -49,7 +51,7 @@ public class Lecture13 extends JFrame{
                 System.out.println("");
             } catch (NumberFormatException ex) {
                 System.out.println("Invalid entry: '" + userInput + "'.  You must enter an integer.");
-                //ex.printStackTrace();
+                ex.printStackTrace();
             }
             System.out.print("Enter an integer ('q' to quit.):");
             userInput = standardIn.next();
@@ -84,30 +86,32 @@ public class Lecture13 extends JFrame{
             }
         });
 
-        goButton.addActionListener(new ActionListener() {
+            goButton.addActionListener(new ActionListener() {
 
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                int answer;
-                try {
-                    answer = Integer.parseInt(inputField.getText());
+                @Override
+                public void actionPerformed(ActionEvent e) {
+                    int answer;
 
-                    if (answer == 1) {
-                        JOptionPane.showMessageDialog(null, "You'll be an expert in no time!");
-                    } else {
-                        JOptionPane.showMessageDialog(null, "Keep trying!");
+                    try {
+                        answer = Integer.parseInt(inputField.getText());
+
+                        if (answer == 1) {
+                            JOptionPane.showMessageDialog(null, "You'll be an expert in no time!");
+                        } else {
+                            JOptionPane.showMessageDialog(null, "Keep trying!");
+                        }
+
+                    } catch (Exception ex) {
+                        // http://docs.oracle.com/javase/7/docs/api/java/lang/NumberFormatException.html
+
+                        String message = formatExceptions(ex);
+                        errorLabel.setText(message);
+                        //ex.printStackTrace();
                     }
 
-                } catch (NumberFormatException ex) {
-                    // http://docs.oracle.com/javase/7/docs/api/java/lang/NumberFormatException.html
-
-                    String message = formatExceptions(ex);
-                    errorLabel.setText(message);
                 }
+            });
 
-
-            }
-        });
 
 
         JPanel messagePanel = new JPanel();
