@@ -40,9 +40,7 @@ public class Lecture14 {
                     LOGGER.info("Quote: " + quote.getTitle());
                     System.out.println(quote);
                 }
-                System.out.println("Enter a filename ('q' to quit):");
-                userInput = standardIn.nextLine();
-                LOGGER.info("User entered '" + userInput + "' for the filename.");
+
 
             } catch (InvalidPathException e) {
                 LOGGER.warning("Invalid path.");
@@ -56,6 +54,10 @@ public class Lecture14 {
             } finally {
                 LOGGER.info("Program done.");
             }
+
+            System.out.println("Enter a filename ('q' to quit):");
+            userInput = standardIn.nextLine();
+            LOGGER.info("User entered '" + userInput + "' for the filename.");
         }
     }
 
@@ -217,6 +219,8 @@ public class Lecture14 {
             } catch (IOException e) {
                 LOGGER.severe(e.getClass() + "\n" + e.getMessage());
                 throw new RuntimeException("I/O error reading parse file.");
+            } catch (Exception e) {
+                System.out.println(e.getClass());
             }
             return quotes;
         }
@@ -231,8 +235,9 @@ public class Lecture14 {
                     throw new IllegalArgumentException("Improperly formatted line in parse file.");
                 }
             } else {
+                LOGGER.severe("Error parsing line: '" + line + "'.  No delimiter found.");
                 throw new IllegalArgumentException("Line does not contain delimiter.");
-                //LOGGER.severe("Error parsing line: '" + line + "'.  No delimiter found.");
+                //
             }
             return new Quote(parts[0], parts[1]);
         }
