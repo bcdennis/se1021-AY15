@@ -29,13 +29,7 @@ public class ImageFiles extends JFrame {
         canvas = new JPanel();
 
         add(canvas);
-        Dimension dim = new Dimension(100,100);
 
-        // inform the layout manager not to mess with size of this panel.
-        canvas.setSize(dim);
-        canvas.setMaximumSize(dim);
-        canvas.setMinimumSize(dim);
-        canvas.setPreferredSize(dim);
 
         // http://docs.oracle.com/javase/8/docs/api/javax/swing/JFileChooser.html
         JFileChooser imageChooser = new JFileChooser();
@@ -74,6 +68,15 @@ public class ImageFiles extends JFrame {
                 img = ImageIO.read(selectedImageFile);
                 JLabel imageLabel = new JLabel(new ImageIcon(img));
                 canvas.add(imageLabel);
+
+                Dimension dim = new Dimension(img.getWidth(), img.getHeight());
+
+                // inform the layout manager not to mess with size of this panel.
+                canvas.setSize(dim);
+                canvas.setMaximumSize(dim);
+                canvas.setMinimumSize(dim);
+                canvas.setPreferredSize(dim);
+                setSize(dim);
 
 
             } catch (IOException e) {
