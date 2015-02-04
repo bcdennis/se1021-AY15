@@ -90,8 +90,12 @@ public class ImageFiles extends JFrame {
     }
 
     private String parseExtension(String filename) {
-        String[] parts = filename.split(".");
+        String[] parts = filename.split("\\.");
         String extension = "";
+
+        for(int i = 0; i < parts.length; i++){
+            System.out.println(parts[i]);
+        }
 
         if (parts.length > 0) {
             extension = parts[parts.length -1];
