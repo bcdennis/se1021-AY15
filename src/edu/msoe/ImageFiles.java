@@ -37,7 +37,7 @@ public class ImageFiles extends JFrame {
         imageChooser.setFileFilter(new FileNameExtensionFilter("JPEG File", "jpg"));
         imageChooser.setFileFilter(new FileNameExtensionFilter("PNG File", "png"));
         imageChooser.setFileFilter(new FileNameExtensionFilter("PPM File", "ppm"));
-        //imageChooser.setAcceptAllFileFilterUsed(false);
+        imageChooser.setAcceptAllFileFilterUsed(false);
 
         int returnValue = imageChooser.showOpenDialog(this);
 
