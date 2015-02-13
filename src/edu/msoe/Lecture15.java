@@ -143,9 +143,6 @@ public class Lecture15 {
             }
         } catch (FileNotFoundException ex) {
             System.out.println("'cheeseburger.png' does not exist.");
-        } catch (IOException ex) {
-            ex.printStackTrace();
-
         }
 
 
